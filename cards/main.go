@@ -9,10 +9,14 @@ func main() {
 	// card := "Ace of Spades"
 // reassign card value
 	// card = "Five of Diamonds"
+// function and return types
+	// card := newCard()
+// slices and loops
+	cards := []string{newCard(), newCard()}
 
-	card := newCard()
-
-	fmt.Println(card)
+	for i, card := range cards {
+		fmt.Println(i, card)
+	}
 }
 
 
