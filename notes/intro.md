@@ -1,5 +1,15 @@
 # Intro to Go
 
+- [Intro to Go](#intro-to-go)
+  - [Go CLI Commands](#go-cli-commands)
+  - [Go File Structure](#go-file-structure)
+    - [Packages](#packages)
+    - [Imports](#imports)
+    - [Function](#function)
+    - [File Organization](#file-organization)
+
+Folder Reference: [hello-world](../hello-world/main.go)
+
 ## Go CLI Commands
 
 | Commands   | Description                                   |
@@ -11,7 +21,7 @@
 | go get     | Downloads raw source code of external package |
 | go test    | Run test                                      |
 
-## Go Basics
+## Go File Structure
 
 ```go
 package main
