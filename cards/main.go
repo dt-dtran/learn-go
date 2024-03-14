@@ -1,25 +1,30 @@
 package main
 
-import "fmt"
-
 func main() {
-// declare variable card
+// 1. declare variable card
 	// var card string = "Ace of Spades"
 	// or
 	// card := "Ace of Spades"
-// reassign card value
+// 2. reassign card value
 	// card = "Five of Diamonds"
-// function and return types
+// 3. function and return types
 	// card := newCard()
-// slices and loops
-	cards := []string{newCard(), newCard()}
-
-	for i, card := range cards {
-		fmt.Println(i, card)
-	}
+// 4. slices and loops
+	// cards := []string{newCard(), newCard()}
+	// cards = append(cards, "Six of Spades")
+	// for i, card := range cards {
+	// 	fmt.Println(i, card)
+	// }
+// 5. type method: print()
+	// cards := deck{"Ace of Diamonds", newCard()}
+	// cards = append(cards, "Six of Spades")
+	// cards.print()
+// 6. type methid: newDeck()
+	cards := newDeck()
+	cards.print()
 }
 
-
-func newCard() string {
-	return "Five of Diamonds"
-}
+// 3. function and return types
+// func newCard() string {
+// 	return "Five of Diamonds"
+// }

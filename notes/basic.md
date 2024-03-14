@@ -8,6 +8,7 @@
 	- [Slices](#slices)
 	- [For Loops](#for-loops)
 	- [Object Oriented Programming with Go](#object-oriented-programming-with-go)
+		- [Receiver](#receiver)
 
 Folder Reference: [Cards](../cards/main.go)
 
@@ -95,4 +96,38 @@ for i, card := range cards {
 
 ## Object Oriented Programming with Go
 
-Class doest not exist in Go. The Go approach to OOP is to extend the base stype and add additional functionality.
+Class does not exist in Go. The Go approach to OOP is to extend the base type and add additional functionality.
+
+### Receiver
+
+A function receiver is like a method on types to call on the instance of the type. This allows any variable of the type to get access to the method.
+
+A function with receiver consist of:
+
+- keyword: func
+- receiver: (variableShortHand Type) ex. (d deck)
+  - variable: copy of the instance of type
+    - variable is similar to this (js) or self (python).
+    - convention to use the first letter of the type (ex. d)
+  - type: every variable of type can call this method on itself
+- name: ex. print
+- parameter: (..)
+- function post statement: {...}
+
+```go
+type deck []string
+
+// function with a receiver is like a method
+func (d deck) print() {
+	for i, card := range d {
+		fmt.Println(i, card)
+	}
+}
+```
+
+Receiver is not needed for:
+
+- constructor function to create and return a new instance
+- utility function for generic operations/calculations
+  - ex. math addition operations
+- package function: i.e. go builtin function like fmt.Println()

@@ -31,7 +31,7 @@ Notes Reference: [Intro](./notes/intro.md)
 
 Notes Reference: [Basic Syntax](./notes/basic.md)
 
-- Variable declarations and reassignment
+- Variable declarations and reassignmsent
 - Basic Data Types
 - Function and Return Types
 - Array, Slice, and Loops
