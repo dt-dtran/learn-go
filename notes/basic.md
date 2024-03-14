@@ -77,6 +77,7 @@ cards := []string{"1", "newCard()"}
 Splitting an existing slice consist of a starting index to include and up to index that is not included:
 
 - element[startIndexIncluding : upToNotIncluding]
+- this create a copy of the slice and not modify the original slice.
 
 ```go
 cards := []string{"0", "1", "2", "3"}

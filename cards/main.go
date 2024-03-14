@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 // 1. declare variable card
 	// var card string = "Ace of Spades"
@@ -19,9 +21,15 @@ func main() {
 	// cards := deck{"Ace of Diamonds", newCard()}
 	// cards = append(cards, "Six of Spades")
 	// cards.print()
-// 6. type methid: newDeck()
+// 6. type method: newDeck()
 	cards := newDeck()
 	cards.print()
+// 7. type method: deal()
+	hand, remainingCards := deal(cards, 5)
+	fmt.Println("hand")
+	hand.print()
+	fmt.Println("RE")
+	remainingCards.print()
 }
 
 // 3. function and return types
