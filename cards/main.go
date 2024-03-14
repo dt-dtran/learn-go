@@ -23,13 +23,15 @@ func main() {
 	// cards.print()
 // 6. type method: newDeck()
 	cards := newDeck()
-	cards.print()
+	// cards.print()
 // 7. type method: deal()
-	hand, remainingCards := deal(cards, 5)
-	fmt.Println("hand")
-	hand.print()
-	fmt.Println("RE")
-	remainingCards.print()
+	// hand, remainingCards := deal(cards, 5)
+	// fmt.Println("hand")
+	// hand.print()
+	// fmt.Println("RE")
+	// remainingCards.print()
+// 8. type method: convert deck to []string
+	fmt.Println(cards.toString())
 }
 
 // 3. function and return types

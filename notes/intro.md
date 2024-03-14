@@ -50,6 +50,15 @@ Import statements forms a link of standard library or resuable packages with mai
 
 [Standard Library packages](https://pkg.go.dev/std)
 
+Syntax to import multiple packages:
+
+```go
+import (
+	"fmt"
+	"strings"
+)
+```
+
 ### Function
 
 Function consist of:
