@@ -6,6 +6,7 @@
 	- [Basic Data types](#basic-data-types)
 	- [Function and Return Types](#function-and-return-types)
 	- [Slices](#slices)
+		- [Splitting Range of a Slice](#splitting-range-of-a-slice)
 	- [For Loops](#for-loops)
 	- [Object Oriented Programming with Go](#object-oriented-programming-with-go)
 		- [Receiver](#receiver)
@@ -69,6 +70,18 @@ Slice syntax consist of:
 
 ```go
 cards := []string{"1", "newCard()"}
+```
+
+### Splitting Range of a Slice
+
+Splitting an existing slice consist of a starting index to include and up to index that is not included:
+
+- element[startIndexIncluding : upToNotIncluding]
+
+```go
+cards := []string{"0", "1", "2", "3"}
+cards[0:2] = cards[:2] = ["0", "1"]
+cards[2:] = ["2", "3"]
 ```
 
 ## For Loops

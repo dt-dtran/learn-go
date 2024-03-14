@@ -5,6 +5,7 @@ import "fmt"
 // create a new type of deck as a slice of string
 type deck []string
 
+// receiver is not needed
 func newDeck() deck {
 	cards := deck{}
 
