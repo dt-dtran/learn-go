@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 // 1. declare variable card
 	// var card string = "Ace of Spades"
@@ -22,7 +20,7 @@ func main() {
 	// cards = append(cards, "Six of Spades")
 	// cards.print()
 // 6. type method: newDeck()
-	cards := newDeck()
+	// cards := newDeck()
 	// cards.print()
 // 7. type method: deal()
 	// hand, remainingCards := deal(cards, 5)
@@ -31,7 +29,12 @@ func main() {
 	// fmt.Println("RE")
 	// remainingCards.print()
 // 8. type method: convert deck to []string
-	fmt.Println(cards.toString())
+	// fmt.Println(cards.toString())
+// 9. type method: save to file
+	// cards.saveToFile("my_cards")
+// 10. type method: get cards from file
+	cards := newDeckFromFile("my_cards")
+	cards.print()
 }
 
 // 3. function and return types
