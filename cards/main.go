@@ -23,17 +23,24 @@ func main() {
 	// cards := newDeck()
 	// cards.print()
 // 7. type method: deal()
+	// cards := newDeck()
 	// hand, remainingCards := deal(cards, 5)
 	// fmt.Println("hand")
 	// hand.print()
 	// fmt.Println("RE")
 	// remainingCards.print()
 // 8. type method: convert deck to []string
+	// cards := newDeck()
 	// fmt.Println(cards.toString())
 // 9. type method: save to file
+	// cards := newDeck()
 	// cards.saveToFile("my_cards")
 // 10. type method: get cards from file
-	cards := newDeckFromFile("my_cards")
+	// cards := newDeckFromFile("my_cards")
+	// cards.print()
+// 11. type method: shuffle
+	cards := newDeck()
+	cards.shuffle()
 	cards.print()
 }
 

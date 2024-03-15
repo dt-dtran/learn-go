@@ -6,8 +6,11 @@
     - [Floats and Exponents](#floats-and-exponents)
     - [Base String](#base-string)
   - [Other](#other)
+  - [Randomization](#randomization)
 
 ## Common Conversions
+
+Commom syntax = ConversionType(CurrentValue)
 
 | Convert To        | Package | Function                     |
 | ----------------- | ------- | ---------------------------- |
@@ -85,3 +88,26 @@ Use case for formats:
 | Conversion     | Package | Function                                   |
 | -------------- | ------- | ------------------------------------------ |
 | []string Joins | strings | strings.Join([]string(value), "separator") |
+| str Split      | strings | strings.Split(string(value), "separator")  |
+
+## Randomization
+
+| Function                    | Output                                  |
+| --------------------------- | --------------------------------------- |
+| rand.Intn(n int)            | positive number from Source (seed)      |
+| rand.New(source)            | create new rand uses values from source |
+| rand.NewSource(x)           | create new source seed                  |
+| x = (time.Now().UnixNano()) | time in nanoseconds in int64            |
+
+```go
+source := rand.NewSource(time.Now().UnixNano())
+r := rand.New(source)
+
+for i := range d {
+	newPosition := r.Intn(len(d) - 1)
+	d[i], d[newPosition] = d[newPosition], d[i]
+}
+```
+
+- [rand](https://pkg.go.dev/math/rand#Intn)
+- [time UnixNano](https://pkg.go.dev/time#Time.UnixNano)
