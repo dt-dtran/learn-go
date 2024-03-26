@@ -1,12 +1,17 @@
-# Go Basic Syntax
+# Go Fundamentals
 
-- [Go Basic Syntax](#go-basic-syntax)
+- [Go Fundamentals](#go-fundamentals)
 	- [Variable Declarations](#variable-declarations)
 		- [Reassigning Variables](#reassigning-variables)
-	- [Basic Data types](#basic-data-types)
-	- [Arrays](#arrays)
-		- [Slices](#slices)
-			- [Splitting Range of a Slice](#splitting-range-of-a-slice)
+- [Data Types](#data-types)
+	- [Concrete Type](#concrete-type)
+		- [Basic Type](#basic-type)
+		- [Composite Type](#composite-type)
+			- [Arrays](#arrays)
+			- [Slices](#slices)
+				- [Splitting Range of a Slice](#splitting-range-of-a-slice)
+		- [User Defined / Custom Type](#user-defined--custom-type)
+	- [Interface Type](#interface-type)
 - [Control Flow:](#control-flow)
 	- [Loops](#loops)
 		- [For each](#for-each)
@@ -47,7 +52,13 @@ card := "Ace of Spades"
 Only use := when declaring new variables
 card = "Five of Diamonds"
 
-## Basic Data types
+# Data Types
+
+## Concrete Type
+
+A concrete type has complete definition and can be instantiated directly to create actual values.
+
+### Basic Type
 
 | Type    | Example           |
 | ------- | ----------------- |
@@ -56,11 +67,20 @@ card = "Five of Diamonds"
 | int     | -1, 0, 1          |
 | float64 | -1.01, 0.1, 1.091 |
 
-## Arrays
+See more info on data type [conversion](./3-conversion.md)
+
+### Composite Type
+
+| Type                      | Example                           |
+| ------------------------- | --------------------------------- |
+| [structs](./4-structs.md) | collection of somewhat properties |
+| [map](./5-maps.md)        | collection of related properties  |
+
+#### Arrays
 
 Array is a fixed length list of elements.
 
-### Slices
+#### Slices
 
 Slice is an array that can grow or shrink. A slice does not store any data, it just describes a section of an underlying array.
 
@@ -84,7 +104,7 @@ When created 2 data structures are created:
 
 Changing the elements of a slice modifies the corresponding elements of its underlying array. Other slices that share the same underlying array will see those changes.
 
-#### Splitting Range of a Slice
+##### Splitting Range of a Slice
 
 Splitting an existing slice consist of a starting index to include and up to index that is not included:
 
@@ -98,6 +118,16 @@ cards[2:] = ["2", "3"]
 ```
 
 dynamically-sized: https://go.dev/tour/moretypes/13
+
+### User Defined / Custom Type
+
+User Defined / Custom Type is created using struct or type declaration.
+
+## Interface Type
+
+Interface is a type that defines a set of methods. It defines behavior but cannot create value or implement.
+
+More information: [interface](./6-interface.md)
 
 # Control Flow:
 

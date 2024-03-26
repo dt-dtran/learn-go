@@ -8,6 +8,7 @@
     - [Data Type Conversions](#data-type-conversions)
     - [Structs and Pointers](#structs-and-pointers)
     - [Maps](#maps)
+    - [Interfaces](#interfaces)
 
 ## What is Go?
 
@@ -75,3 +76,7 @@ Notes Reference: [Map](./notes/5-maps.md)
 - Initialization
 - Manipulating Map
 - Iterate Over Map
+
+### Interfaces
+
+Notes Reference: [Interface](./notes/6-interface.md)
