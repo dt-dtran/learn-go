@@ -25,14 +25,14 @@ Go is:
 
 ### Go CLI and File Structure
 
-Notes Reference: [Intro](./notes/intro.md)
+Notes Reference: [Intro](./notes/1-intro.md)
 
 - CLI: General built in commands
 - File Structure: packages, imports, function and file organization
 
 ### Go Fundamentals
 
-Notes Reference: [Basic](./notes/basic.md)
+Notes Reference: [Basic](./notes/2-basic.md)
 
 - Variable declarations and reassignmsent
 - Basic Data Types
@@ -49,7 +49,7 @@ Notes Reference: [Basic](./notes/basic.md)
 
 ### Data Type Conversions
 
-Notes Reference: [conversion](./notes/conversion.md)
+Notes Reference: [conversion](./notes/3-conversion.md)
 
 - Common conversion (strconv)
 - Floats and Exponents
@@ -59,7 +59,7 @@ Notes Reference: [conversion](./notes/conversion.md)
 
 ### Structs and Pointers
 
-Notes Reference: [Structs](./notes/structs.md)
+Notes Reference: [Structs](./notes/4-structs.md)
 
 - Struct literals
 - Embedded Structs
@@ -69,7 +69,7 @@ Notes Reference: [Structs](./notes/structs.md)
 
 ### Maps
 
-Notes Reference: [Map](./notes/maps.md)
+Notes Reference: [Map](./notes/5-maps.md)
 
 - Map vs Struct
 - Initialization

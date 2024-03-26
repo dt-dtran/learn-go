@@ -337,7 +337,7 @@ The following data types needs pointers to update the value at memory address:
 - float
 - string
 - bool
-- [structs](structs.md)
+- [structs](./4-structs.md)
 
 ## Reference Type
 
