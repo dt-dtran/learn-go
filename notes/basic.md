@@ -341,7 +341,7 @@ The following data types needs pointers to update the value at memory address:
 
 ## Reference Type
 
-A reference type will make a copy of the value and reference the underlying memory address.
+A reference type will make a copy of the reference in the underlying memory address.
 
 The following data types does not need pointers to update value at memory address:
 

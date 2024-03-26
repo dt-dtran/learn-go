@@ -9,6 +9,8 @@
   - [Pointers](#pointers)
     - [Struct with Pointers](#struct-with-pointers)
 
+Folder Reference: [structs](../structs/main.go)
+
 ## Structs
 
 Struct is short for structure. A struct is a collection of fields or properties that are related together. Struct is similar to object (javascript), dictionary (python), or a hash (ruby).

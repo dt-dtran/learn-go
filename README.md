@@ -7,6 +7,7 @@
     - [Go Fundamentals](#go-fundamentals)
     - [Data Type Conversions](#data-type-conversions)
     - [Structs and Pointers](#structs-and-pointers)
+    - [Maps](#maps)
 
 ## What is Go?
 
@@ -65,3 +66,12 @@ Notes Reference: [Structs](./notes/structs.md)
 - Struct with Receiver Function
 - Pointers
 - Struct with Pointers
+
+### Maps
+
+Notes Reference: [Map](./notes/maps.md)
+
+- Map vs Struct
+- Initialization
+- Manipulating Map
+- Iterate Over Map
