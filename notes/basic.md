@@ -7,19 +7,23 @@
 	- [Arrays](#arrays)
 		- [Slices](#slices)
 			- [Splitting Range of a Slice](#splitting-range-of-a-slice)
-	- [Control Flow:](#control-flow)
-		- [Loops](#loops)
-			- [For each](#for-each)
-			- [While Loop](#while-loop)
-			- [Range](#range)
-		- [Conditionals](#conditionals)
-			- [Switch](#switch)
-		- [Other Branching](#other-branching)
-		- [Defer](#defer)
-			- [Stacking Defers](#stacking-defers)
-		- [Function and Return Types](#function-and-return-types)
+- [Control Flow:](#control-flow)
+	- [Loops](#loops)
+		- [For each](#for-each)
+		- [While Loop](#while-loop)
+		- [Range](#range)
+	- [Conditionals](#conditionals)
+		- [Switch](#switch)
+	- [Other Branching](#other-branching)
+	- [Defer](#defer)
+		- [Stacking Defers](#stacking-defers)
+	- [Function and Return Types](#function-and-return-types)
 - [Object Oriented Programming with Go](#object-oriented-programming-with-go)
 	- [Receiver](#receiver)
+- [Reference vs Value Types](#reference-vs-value-types)
+	- [Pass By Value](#pass-by-value)
+		- [Value Type](#value-type)
+	- [Reference Type](#reference-type)
 
 Folder Reference: [Cards](../cards/main.go)
 
@@ -54,9 +58,11 @@ card = "Five of Diamonds"
 
 ## Arrays
 
+Array is a fixed length list of elements.
+
 ### Slices
 
-Array is a fixed length list of things. Slice is an array that can grow or shrink. A slice does not store any data, it just describes a section of an underlying array.
+Slice is an array that can grow or shrink. A slice does not store any data, it just describes a section of an underlying array.
 
 Slice syntax consist of:
 
@@ -67,6 +73,14 @@ Slice syntax consist of:
 ```go
 cards := []string{"1", "newCard()"}
 ```
+
+When created 2 data structures are created:
+
+- Underlying array
+- Slice which contains:
+  - pointer to the head: pointer to the underlying array
+  - capacity: how many elements it can contain
+  - length: how many elments currently exist inside the slice
 
 Changing the elements of a slice modifies the corresponding elements of its underlying array. Other slices that share the same underlying array will see those changes.
 
@@ -82,10 +96,12 @@ cards := []string{"0", "1", "2", "3"}
 cards[0:2] = cards[:2] = ["0", "1"]
 cards[2:] = ["2", "3"]
 ```
-dynamically-sized: https://go.dev/tour/moretypes/13
-## Control Flow:
 
-### Loops
+dynamically-sized: https://go.dev/tour/moretypes/13
+
+# Control Flow:
+
+## Loops
 
 Loops syntax consist of:
 
@@ -111,7 +127,7 @@ func main() {
 }
 ```
 
-#### For each
+### For each
 
 ```go
 func main() {
@@ -121,8 +137,10 @@ func main() {
 }
 ```
 
-#### While Loop
+### While Loop
+
 Semicolons syntax can be dropped.
+
 ```go
 func main() {
 	sum := 1
@@ -133,8 +151,9 @@ func main() {
 }
 ```
 
-#### Range
-You can skip the index or value by assigning to _. If you only want the index, you can omit the second variable.
+### Range
+
+You can skip the index or value by assigning to \_. If you only want the index, you can omit the second variable.
 
 ```go
 for i, _ := range pow // omit value
@@ -144,14 +163,15 @@ for _, value := range pow // omit index
 for i := range pow
 ```
 
-### Conditionals
+## Conditionals
 
 if syntax consist of:
+
 - keyword: if
 - (optional) short statement: to execute before the condition
 - condition expression: condition to evaluate
 - post statement: executed if condition is met
-  
+
 Variables declared inside an if short statement can be used inside any of the else blocks.
 
 ```go
@@ -168,10 +188,13 @@ func pow(x, n, lim float64) float64 {
 	return lim
 }
 ```
-#### Switch
+
+### Switch
+
 A switch statement is a shorter way to write a sequence of if - else statements. Switch cases evaluate cases from top to bottom, stopping when a case succeeds.
 
 switch syntax consist of:
+
 - keyword: switch and case
 - condition expression: condition to evaluate
   - No condition is the same as switch true {...}
@@ -205,26 +228,31 @@ func main() {
 }
 ```
 
-### Other Branching
+## Other Branching
+
 - break: terminates the execution of a loop or switch statement
 - continue: skips the current iteration of a loop and proceeds to the next iteration
 - goto: transfer control to a labeled statement within the same function
   - Recommended to avoid using goto. goto makes code harder to read.
 
-### Defer
+## Defer
+
 A defer statement defers the execution of a function until the surrounding function returns. The deferred call's arguments are evaluated immediately, but the function call is not executed until the surrounding function returns.
 
 defer syntax consist of:
+
 - keyword: defer
 - function call: function to defer
 - arguments: arguments to pass into the function call
 
 defer use case:
+
 - Resource Cleanup: closing files, releasing locks, or closing database connections
 - Logging: recording entry and exit points
 - Panic Recovery: recovering from panics by deferring function calls that handle errors
 
-#### Stacking Defers
+### Stacking Defers
+
 Multiple defer statements within the same function are executed in the reverse order in which they are declared. This means the function calls are pushed onto a stack and executed in last-in-first-out (LIFO) order.
 
 ```go
@@ -239,7 +267,7 @@ func main() {
 }
 ```
 
-### Function and Return Types
+## Function and Return Types
 
 function syntax consist of:
 
@@ -292,3 +320,33 @@ Receiver is not needed for:
 - utility function for generic operations/calculations
   - ex. math addition operations
 - package function: i.e. go builtin function like fmt.Println()
+
+# Reference vs Value Types
+
+## Pass By Value
+
+In Go, when you pass an argument to a function, by default it is passed by value. This means that a copy of the argument's value is made and passed to the function. Any modifications made to the parameter inside the function do not affect the original value outside the function. A copy of modification will exist in a separate memory address.
+
+### Value Type
+
+At default, a value type will make a copy of the value at a new memory address.
+
+The following data types needs pointers to update the value at memory address:
+
+- int
+- float
+- string
+- bool
+- [structs](structs.md)
+
+## Reference Type
+
+A reference type will make a copy of the value and reference the underlying memory address.
+
+The following data types does not need pointers to update value at memory address:
+
+- slices
+- maps
+- channels
+- pointers
+- functions

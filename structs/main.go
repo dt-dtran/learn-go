@@ -47,15 +47,31 @@ func main() {
 	// fmt.Println(jim)
 	// fmt.Printf("%+v", jim)
 
-	// 5. receiver
-	jim.updateName("Jimmy")
+	// 5. receiver and pass by value
+	// jim.updateName("Jimmy") // copy is updated
+	// jim.print()
+
+	// 6. struct pointer:
+	jimPointer := &jim
+	jimPointer.updateName("Jimmy")
 	jim.print()
 }
+// 5. receiver and pass by value
+// func (p person) updateName(newFirstName string) {
+// 	p.firstName = newFirstName
+// }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+// func (p person) print() {
+// 	fmt.Printf("%+v", p)
+// }
+
+// 6. struct pointer: receiver update
+func (pointerToPerson *person) updateName(newFirstName string) {
+	// long way
+	// (*pointerToPerson).firstName = newFirstName
+	pointerToPerson.firstName = newFirstName
 }
 
-func (p person) print() {
-	fmt.Printf("%+v", p)
+func (pointerToPerson *person) print() {
+	fmt.Printf("%+v", pointerToPerson)
 }

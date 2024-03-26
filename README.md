@@ -5,6 +5,8 @@
   - [Content](#content)
     - [Go CLI and File Structure](#go-cli-and-file-structure)
     - [Go Fundamentals](#go-fundamentals)
+    - [Data Type Conversions](#data-type-conversions)
+    - [Structs and Pointers](#structs-and-pointers)
 
 ## What is Go?
 
@@ -29,9 +31,37 @@ Notes Reference: [Intro](./notes/intro.md)
 
 ### Go Fundamentals
 
-Notes Reference: [Basic Syntax](./notes/basic.md)
+Notes Reference: [Basic](./notes/basic.md)
 
 - Variable declarations and reassignmsent
 - Basic Data Types
-- Function and Return Types
-- Array, Slice, and Loops
+- Array and Slice
+- Control Flow
+  - Loops
+  - Conditionals and Switches
+  - Branching
+  - Defer and Stacking Defer
+  - Function and Return Types
+- Object Oriented Programming
+- Reference vs Value Types (pointer)
+  - Pass by Value
+
+### Data Type Conversions
+
+Notes Reference: [conversion](./notes/conversion.md)
+
+- Common conversion (strconv)
+- Floats and Exponents
+- Base String
+- Joins / Split
+- Randomization
+
+### Structs and Pointers
+
+Notes Reference: [Structs](./notes/structs.md)
+
+- Struct literals
+- Embedded Structs
+- Struct with Receiver Function
+- Pointers
+- Struct with Pointers
